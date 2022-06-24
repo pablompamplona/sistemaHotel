@@ -407,7 +407,7 @@ public class Hotel {
 					}
 					System.out.print("Digite a opcao correspondente:");
 					selecQuartoCheck = teclado.nextInt();
-					if ((clientes.get(selecClienteCheck).clienteFumante == true) && (quartos.get(selecQuartoCheck).quartoFumante == true)) {
+					if ((clientes.get(selecClienteCheck).clienteFumante) && (quartos.get(selecQuartoCheck).quartoFumante)) {
 						check.setCliente(clientes.get(selecClienteCheck).getNome());
 						check.setQuarto(quartos.get(selecQuartoCheck).getNumero());
 						clientes.get(selecClienteCheck).setAcomodacao(quartos.get(selecQuartoCheck).getNumero());
@@ -416,7 +416,7 @@ public class Hotel {
 						System.out.println("O Sr(a). " + clientes.get(selecClienteCheck).getNome() + " foi acomodado no quarto " + quartos.get(selecQuartoCheck).getNumero());
 						hospedes.add(check);
 //						System.out.println(hospedes);
-					} else if((clientes.get(selecClienteCheck).clienteFumante == false) && (quartos.get(selecQuartoCheck).quartoFumante == false)) {
+					} else if(!(clientes.get(selecClienteCheck).clienteFumante) && !(quartos.get(selecQuartoCheck).quartoFumante)) {
 						check.setCliente(clientes.get(selecClienteCheck).getNome());
 						check.setQuarto(quartos.get(selecQuartoCheck).getNumero());
 						clientes.get(selecClienteCheck).setAcomodacao(quartos.get(selecQuartoCheck).getNumero());
@@ -424,10 +424,10 @@ public class Hotel {
 						System.out.println("****** CHECK-IN EFETUADO COM SUCESSO ******");
 						System.out.println("O Sr(a). " + clientes.get(selecClienteCheck).getNome() + " foi acomodado no quarto " + quartos.get(selecQuartoCheck).getNumero());
 						hospedes.add(check);
-					} else if ((clientes.get(selecClienteCheck).clienteFumante == false) && (quartos.get(selecQuartoCheck).quartoFumante == true)) {
+					} else if (!(clientes.get(selecClienteCheck).clienteFumante) && (quartos.get(selecQuartoCheck).quartoFumante)) {
 						System.out.println("****** SELECIONE UM QUARTO PARA NAO FUMANTES ******");
 						break;
-					} else if ((clientes.get(selecClienteCheck).clienteFumante == true) && (quartos.get(selecQuartoCheck).quartoFumante == false)) {
+					} else if ((clientes.get(selecClienteCheck).clienteFumante) && !(quartos.get(selecQuartoCheck).quartoFumante)) {
 						System.out.println("****** SELECIONE UM QUARTO PARA FUMANTES ******");
 						break;
 					}
